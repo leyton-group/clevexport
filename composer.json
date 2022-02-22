@@ -13,6 +13,11 @@
             "email": "einani@leyton.com"
         }
     ],
+  "autoload": {
+    "psr-4": {
+      "Leyton\\ClevExport\\": "src"
+    }
+  },
   "extra": {
     "laravel": {
       "providers": [
