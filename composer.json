@@ -1,0 +1,23 @@
+{
+    "name": "leyton/clevexport",
+    "description": "A Clever mechanism to export large data asynchronously",
+    "require": {
+      "illuminate/database": "^6.0.0|^7.0.0|^8.0.0",
+      "illuminate/events": "^6.0.0|^7.0.0|^8.0.0",
+      "illuminate/support": "^6.0 || ^7.0 || ^8.0",
+      "maatwebsite/excel": "^3.1"
+    },
+    "authors": [
+        {
+            "name": "El Houssain INANI",
+            "email": "einani@leyton.com"
+        }
+    ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Leyton\\ClevExport\\ClevExportServiceProvider"
+      ]
+    }
+  }
+}
