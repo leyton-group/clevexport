@@ -3,7 +3,7 @@ The goal of this Laravel package is to execute the exportation to **EXCEL** larg
 
 ## Installation
 ````
-compose require einani/clevexport
+compose require leyton/clevexport
 ````
 After the installation make sure to publish the assets
 ````
