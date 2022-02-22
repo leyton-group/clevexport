@@ -17,7 +17,7 @@ class CreateSubExportsTable extends Migration
     {
         Schema::create('sub_exports', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Export::class);
+            $table->foreignId('export_id');
             $table->string('file_path')->nullable();
             $table->integer('status')->default(SubExport::IN_PROGRESS);
             $table->text('pagination');
