@@ -7,11 +7,7 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-/**
- * Class ClientsExport
- * @package App\Services\Exports
- */
-class ClientsExport implements WithHeadings, ShouldAutoSize, FromCollection
+class ExportTemplate implements WithHeadings, ShouldAutoSize, FromCollection
 {
 
     protected $headers;

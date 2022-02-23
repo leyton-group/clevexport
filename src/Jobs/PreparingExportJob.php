@@ -7,6 +7,7 @@ namespace Leyton\ClevExport\Jobs;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Foundation\Bus\PendingChain;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Bus;
@@ -59,6 +60,6 @@ class PreparingExportJob implements ShouldQueue
 
         $chain[] = new MergeSubExportsJob($export);
 
-        Bus::chain($chain)->delay(now()->addSecond())->dispatch();
+        StarterJob::withChain($chain)->dispatch()->delay(now()->addSecond());
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Leyton\ClevExport\Jobs;
 
-use App\Services\Exports\ClientsExport;
 use Excel;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
@@ -15,7 +14,7 @@ use Leyton\ClevExport\IsExportable;
 use Leyton\ClevExport\QueryFinder;
 use Leyton\ClevExport\Models\SubExport;
 use Leyton\ClevExport\ShouldHandleResult;
-
+use Leyton\ClevExport\Exports\ExportTemplate;
 class RunSubExport implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -66,7 +65,7 @@ class RunSubExport implements ShouldQueue
 
             $file_path = $this->subExport->getPath();
 
-            Excel::store(new ClientsExport($this->subExport->pagination == 1 ? $results->headers() : [], collect($results->columns())), $file_path, "local");
+            Excel::store(new ExportTemplate($this->subExport->pagination == 1 ? $results->headers() : [], collect($results->columns())), $file_path, "local");
 
             $this->subExport->update([
                 'status' => SubExport::EXPORTED,
