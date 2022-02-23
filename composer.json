@@ -3,8 +3,6 @@
     "description": "A Clever mechanism to export large data asynchronously",
     "license": "Apache-2.0",
     "require": {
-      "illuminate/database": "^6.0.0|^7.30.4|^8.0.0",
-      "illuminate/events": "^6.0.0|^7.0.0|^8.0.0",
       "illuminate/support": "^6.0 || ^7.0 || ^8.0",
       "maatwebsite/excel": "^3.1"
     },
