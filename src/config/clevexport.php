@@ -5,7 +5,7 @@ return [
     'listeners' => [],
 
     // if you want to stock the user who started the export
-    'with_owner' => true,
+    'with_owner' => false,
 
     // the guard
     'guard' => 'web',
