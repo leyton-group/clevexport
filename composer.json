@@ -3,6 +3,7 @@
     "description": "A Clever mechanism to export large data asynchronously",
     "license": "Apache-2.0",
     "require": {
+      "php": "^7.4",
       "illuminate/support": "^6.0 || ^7.0 || ^8.0",
       "maatwebsite/excel": "^3.1"
     },
