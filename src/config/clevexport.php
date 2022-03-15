@@ -16,7 +16,7 @@ return [
     // The Authenticable class
     'owner_class' => null,
 
-    // Number of chunks
-    'chunks' => 10,
+    // Number of records in each sub export
+    'records_per_file' => 500,
 
 ];
