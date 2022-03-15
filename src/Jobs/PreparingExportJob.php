@@ -31,9 +31,10 @@ class PreparingExportJob implements ShouldQueue
 
     public function handle()
     {
-        $chunks = config('clevexport.chunks');
+        
+        $perPage = config('clevexport.records_per_file');
 
-        $perPage = ceil($this->queryFinder->with($this->params)->query()->count() / $chunks);
+        $chunks = ceil($this->queryFinder->with($this->params)->query()->count() / $perPage);
 
         $data = [
             'criterias' => json_encode($this->params, true),
